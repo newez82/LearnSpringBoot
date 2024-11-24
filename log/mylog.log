@@ -1,0 +1,318 @@
+2024-10-21T13:37:54.481-07:00 ERROR 36164 --- [LearnSpringBoot] [http-nio-8080-exec-6] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.dao.IncorrectResultSizeDataAccessException: Query did not return a unique result: 2 results were returned] with root cause
+
+org.hibernate.NonUniqueResultException: Query did not return a unique result: 2 results were returned
+	at org.hibernate.query.spi.AbstractSelectionQuery.uniqueElement(AbstractSelectionQuery.java:578) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.hibernate.query.spi.AbstractSelectionQuery.getSingleResult(AbstractSelectionQuery.java:561) ~[hibernate-core-6.5.3.Final.jar:6.5.3.Final]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution$SingleEntityExecution.doExecute(JpaQueryExecution.java:223) ~[spring-data-jpa-3.3.4.jar:3.3.4]
+	at org.springframework.data.jpa.repository.query.JpaQueryExecution.execute(JpaQueryExecution.java:92) ~[spring-data-jpa-3.3.4.jar:3.3.4]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.doExecute(AbstractJpaQuery.java:152) ~[spring-data-jpa-3.3.4.jar:3.3.4]
+	at org.springframework.data.jpa.repository.query.AbstractJpaQuery.execute(AbstractJpaQuery.java:140) ~[spring-data-jpa-3.3.4.jar:3.3.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.doInvoke(RepositoryMethodInvoker.java:170) ~[spring-data-commons-3.3.4.jar:3.3.4]
+	at org.springframework.data.repository.core.support.RepositoryMethodInvoker.invoke(RepositoryMethodInvoker.java:158) ~[spring-data-commons-3.3.4.jar:3.3.4]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.doInvoke(QueryExecutorMethodInterceptor.java:169) ~[spring-data-commons-3.3.4.jar:3.3.4]
+	at org.springframework.data.repository.core.support.QueryExecutorMethodInterceptor.invoke(QueryExecutorMethodInterceptor.java:148) ~[spring-data-commons-3.3.4.jar:3.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.data.projection.DefaultMethodInvokingMethodInterceptor.invoke(DefaultMethodInvokingMethodInterceptor.java:70) ~[spring-data-commons-3.3.4.jar:3.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:379) ~[spring-tx-6.1.13.jar:6.1.13]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:136) ~[spring-data-jpa-3.3.4.jar:3.3.4]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.13.jar:6.1.13]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.13.jar:6.1.13]
+	at jdk.proxy2/jdk.proxy2.$Proxy115.findByEmail(Unknown Source) ~[na:na]
+	at com.tutorial.springboot.LearnSpringBoot.Controllers.StudentController.findStudent(StudentController.java:32) ~[main/:na]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.13.jar:6.1.13]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.30.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.13.jar:6.1.13]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:384) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:905) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.30.jar:10.1.30]
+	at java.base/java.lang.Thread.run(Thread.java:1570) ~[na:na]
+
+2024-10-21T13:51:52.378-07:00  INFO 21532 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 21532 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T13:51:52.388-07:00  INFO 21532 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T13:51:54.417-07:00  INFO 21532 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T13:51:54.626-07:00  INFO 21532 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 185 ms. Found 1 JPA repository interface.
+2024-10-21T13:51:56.338-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-21T13:51:56.382-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T13:51:56.384-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T13:51:56.600-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T13:51:56.602-07:00  INFO 21532 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4060 ms
+2024-10-21T13:51:57.180-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T13:51:57.522-07:00  INFO 21532 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T13:51:57.725-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T13:51:59.343-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T13:51:59.455-07:00  INFO 21532 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T13:52:00.030-07:00  INFO 21532 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1ffd0114
+2024-10-21T13:52:00.044-07:00  INFO 21532 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T13:52:00.180-07:00  WARN 21532 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T13:52:03.423-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T13:52:03.573-07:00  INFO 21532 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T13:52:04.430-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T13:52:06.171-07:00  WARN 21532 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T13:52:06.242-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T13:52:07.332-07:00  INFO 21532 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-21T13:52:07.356-07:00  INFO 21532 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 16.524 seconds (process running for 17.556)
+2024-10-21T13:53:13.886-07:00  INFO 21532 --- [LearnSpringBoot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21T13:53:13.887-07:00  INFO 21532 --- [LearnSpringBoot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-21T13:53:13.891-07:00  INFO 21532 --- [LearnSpringBoot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-21T13:53:13.943-07:00  WARN 21532 --- [LearnSpringBoot] [http-nio-8080-exec-1] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'PATCH' is not supported]
+2024-10-21T14:00:40.597-07:00  INFO 36748 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 36748 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T14:00:40.605-07:00  INFO 36748 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : No active profile set, falling back to 1 default profile: "default"
+2024-10-21T14:00:42.161-07:00  INFO 36748 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T14:00:42.289-07:00  INFO 36748 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 1 JPA repository interface.
+2024-10-21T14:00:43.614-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-21T14:00:43.677-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T14:00:43.679-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T14:00:43.860-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T14:00:43.861-07:00  INFO 36748 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3139 ms
+2024-10-21T14:00:44.379-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T14:00:44.685-07:00  INFO 36748 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T14:00:44.814-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T14:00:45.630-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T14:00:45.700-07:00  INFO 36748 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T14:00:46.090-07:00  INFO 36748 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@9729a97
+2024-10-21T14:00:46.096-07:00  INFO 36748 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T14:00:46.207-07:00  WARN 36748 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T14:00:49.875-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T14:00:50.035-07:00  INFO 36748 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T14:00:50.938-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T14:00:52.235-07:00  WARN 36748 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T14:00:52.303-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T14:00:53.110-07:00  INFO 36748 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-21T14:00:53.126-07:00  INFO 36748 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 13.558 seconds (process running for 14.135)
+2024-10-21T14:01:15.436-07:00  INFO 36748 --- [LearnSpringBoot] [http-nio-8080-exec-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21T14:01:15.437-07:00  INFO 36748 --- [LearnSpringBoot] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-21T14:01:15.439-07:00  INFO 36748 --- [LearnSpringBoot] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-21T14:45:12.852-07:00  INFO 9584 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 9584 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T14:45:12.859-07:00  INFO 9584 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : The following 1 profile is active: "dev"
+2024-10-21T14:45:14.655-07:00  INFO 9584 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T14:45:14.851-07:00  INFO 9584 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 162 ms. Found 1 JPA repository interface.
+2024-10-21T14:45:16.236-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8500 (http)
+2024-10-21T14:45:16.269-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T14:45:16.270-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T14:45:16.452-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T14:45:16.455-07:00  INFO 9584 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3429 ms
+2024-10-21T14:45:17.073-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T14:45:17.272-07:00  INFO 9584 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T14:45:17.409-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T14:45:18.548-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T14:45:18.662-07:00  INFO 9584 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T14:45:19.132-07:00  INFO 9584 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@20b829d5
+2024-10-21T14:45:19.134-07:00  INFO 9584 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T14:45:19.274-07:00  WARN 9584 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T14:45:21.595-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T14:45:21.839-07:00  INFO 9584 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T14:45:22.555-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T14:45:23.752-07:00  WARN 9584 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T14:45:23.823-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T14:45:24.685-07:00  INFO 9584 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8500 (http) with context path '/'
+2024-10-21T14:45:24.707-07:00  INFO 9584 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 13.643 seconds (process running for 14.794)
+2024-10-21T14:45:43.349-07:00  INFO 9584 --- [LearnSpringBoot] [http-nio-8500-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21T14:45:43.351-07:00  INFO 9584 --- [LearnSpringBoot] [http-nio-8500-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-21T14:45:43.358-07:00  INFO 9584 --- [LearnSpringBoot] [http-nio-8500-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-21T14:50:46.514-07:00  INFO 8172 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 8172 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T14:50:46.529-07:00  INFO 8172 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : The following 1 profile is active: "dev"
+2024-10-21T14:50:48.759-07:00  INFO 8172 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T14:50:48.922-07:00  INFO 8172 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 138 ms. Found 1 JPA repository interface.
+2024-10-21T14:50:50.196-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8500 (http)
+2024-10-21T14:50:50.226-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T14:50:50.227-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T14:50:50.376-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T14:50:50.378-07:00  INFO 8172 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3656 ms
+2024-10-21T14:50:50.964-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T14:50:51.114-07:00  INFO 8172 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T14:50:51.197-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T14:50:52.132-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T14:50:52.224-07:00  INFO 8172 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T14:50:52.694-07:00  INFO 8172 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2a0963be
+2024-10-21T14:50:52.700-07:00  INFO 8172 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T14:50:52.784-07:00  WARN 8172 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T14:50:54.572-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T14:50:54.670-07:00  INFO 8172 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T14:50:55.397-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T14:50:56.281-07:00  WARN 8172 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T14:50:56.343-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T14:50:57.146-07:00  INFO 8172 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8500 (http) with context path '/'
+2024-10-21T14:50:57.163-07:00  INFO 8172 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 12.37 seconds (process running for 13.783)
+2024-10-21T14:51:06.832-07:00  INFO 8172 --- [LearnSpringBoot] [http-nio-8500-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21T14:51:06.833-07:00  INFO 8172 --- [LearnSpringBoot] [http-nio-8500-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-21T14:51:06.835-07:00  INFO 8172 --- [LearnSpringBoot] [http-nio-8500-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2024-10-21T14:51:13.307-07:00  WARN 8172 --- [LearnSpringBoot] [http-nio-8500-exec-3] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-10-21T14:51:24.974-07:00  WARN 8172 --- [LearnSpringBoot] [http-nio-8500-exec-2] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.HttpRequestMethodNotSupportedException: Request method 'GET' is not supported]
+2024-10-21T14:52:12.576-07:00  INFO 27952 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 27952 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T14:52:12.583-07:00  INFO 27952 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : The following 1 profile is active: "prod"
+2024-10-21T14:52:14.257-07:00  INFO 27952 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T14:52:14.386-07:00  INFO 27952 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 112 ms. Found 1 JPA repository interface.
+2024-10-21T14:52:15.869-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-21T14:52:15.918-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T14:52:15.921-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T14:52:16.103-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T14:52:16.106-07:00  INFO 27952 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3364 ms
+2024-10-21T14:52:16.668-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T14:52:16.799-07:00  INFO 27952 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T14:52:16.905-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T14:52:17.782-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T14:52:17.860-07:00  INFO 27952 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T14:52:18.228-07:00  INFO 27952 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@25de8898
+2024-10-21T14:52:18.231-07:00  INFO 27952 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T14:52:18.291-07:00  WARN 27952 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T14:52:20.214-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T14:52:20.329-07:00  INFO 27952 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T14:52:21.044-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T14:52:22.085-07:00  WARN 27952 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T14:52:22.167-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T14:52:23.359-07:00  INFO 27952 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-21T14:52:23.394-07:00  INFO 27952 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 12.266 seconds (process running for 13.555)
+2024-10-21T14:52:33.652-07:00  INFO 27952 --- [LearnSpringBoot] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21T14:52:33.656-07:00  INFO 27952 --- [LearnSpringBoot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-21T14:52:33.660-07:00  INFO 27952 --- [LearnSpringBoot] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-10-21T15:03:37.938-07:00  INFO 35604 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 35604 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T15:03:37.946-07:00  INFO 35604 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : The following 1 profile is active: "prod"
+2024-10-21T15:03:39.743-07:00  INFO 35604 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T15:03:40.027-07:00  INFO 35604 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 221 ms. Found 1 JPA repository interface.
+2024-10-21T15:03:41.466-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-21T15:03:41.554-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T15:03:41.556-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T15:03:41.921-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T15:03:41.923-07:00  INFO 35604 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3876 ms
+2024-10-21T15:03:42.845-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T15:03:43.659-07:00  INFO 35604 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T15:03:43.865-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T15:03:45.574-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T15:03:45.814-07:00  INFO 35604 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T15:03:46.603-07:00  INFO 35604 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5731caaf
+2024-10-21T15:03:46.613-07:00  INFO 35604 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T15:03:46.780-07:00  WARN 35604 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T15:03:50.427-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T15:03:50.679-07:00  INFO 35604 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T15:03:51.726-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T15:03:53.573-07:00  WARN 35604 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T15:03:53.637-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T15:03:54.861-07:00  INFO 35604 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-21T15:03:54.891-07:00  INFO 35604 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 18.457 seconds (process running for 21.199)
+2024-10-21T15:04:17.760-07:00  INFO 45612 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 45612 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T15:04:17.764-07:00  INFO 45612 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : The following 1 profile is active: "dev"
+2024-10-21T15:04:19.520-07:00  INFO 45612 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T15:04:19.653-07:00  INFO 45612 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 115 ms. Found 1 JPA repository interface.
+2024-10-21T15:04:20.912-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8500 (http)
+2024-10-21T15:04:20.943-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T15:04:20.946-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T15:04:21.090-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T15:04:21.093-07:00  INFO 45612 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3208 ms
+2024-10-21T15:04:21.613-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T15:04:21.866-07:00  INFO 45612 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T15:04:21.976-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T15:04:23.023-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T15:04:23.119-07:00  INFO 45612 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T15:04:23.500-07:00  INFO 45612 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@1a345298
+2024-10-21T15:04:23.505-07:00  INFO 45612 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T15:04:23.576-07:00  WARN 45612 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T15:04:25.592-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T15:04:25.719-07:00  INFO 45612 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T15:04:26.321-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T15:04:27.579-07:00  WARN 45612 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T15:04:27.648-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T15:04:28.578-07:00  INFO 45612 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8500 (http) with context path '/'
+2024-10-21T15:04:28.607-07:00  INFO 45612 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 12.267 seconds (process running for 14.077)
+2024-10-21T15:15:04.866-07:00  INFO 42436 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 42436 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T15:15:04.872-07:00  INFO 42436 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : The following 1 profile is active: "prod"
+2024-10-21T15:15:07.400-07:00  INFO 42436 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T15:15:07.540-07:00  INFO 42436 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 109 ms. Found 1 JPA repository interface.
+2024-10-21T15:15:09.203-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-21T15:15:09.264-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T15:15:09.267-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T15:15:09.657-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T15:15:09.660-07:00  INFO 42436 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4632 ms
+2024-10-21T15:15:17.019-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T15:15:17.362-07:00  INFO 42436 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T15:15:17.563-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T15:15:19.265-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T15:15:19.419-07:00  INFO 42436 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T15:15:20.089-07:00  INFO 42436 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@5408d4b3
+2024-10-21T15:15:20.099-07:00  INFO 42436 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T15:15:20.290-07:00  WARN 42436 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T15:15:24.182-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T15:15:24.406-07:00  INFO 42436 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T15:15:25.401-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T15:15:27.103-07:00  WARN 42436 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T15:15:27.225-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T15:15:28.734-07:00  INFO 42436 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-21T15:15:28.776-07:00  INFO 42436 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 25.484 seconds (process running for 27.444)
+2024-10-21T15:15:35.124-07:00  INFO 42436 --- [LearnSpringBoot] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21T15:15:35.127-07:00  INFO 42436 --- [LearnSpringBoot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-21T15:15:35.131-07:00  INFO 42436 --- [LearnSpringBoot] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2024-10-21T15:19:47.108-07:00  INFO 13184 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Starting LearnSpringBootApplication using Java 22.0.2 with PID 13184 (C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot\build\classes\java\main started by chin.p.ho in C:\Users\chin.p.ho\Documents\Java\SpringBoot\Genuine Coder\LearnSpringBoot)
+2024-10-21T15:19:47.125-07:00  INFO 13184 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : The following 1 profile is active: "prod"
+2024-10-21T15:19:50.653-07:00  INFO 13184 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-10-21T15:19:50.886-07:00  INFO 13184 --- [LearnSpringBoot] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 1 JPA repository interface.
+2024-10-21T15:19:54.269-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-10-21T15:19:54.331-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-10-21T15:19:54.333-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.30]
+2024-10-21T15:19:54.645-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-10-21T15:19:54.648-07:00  INFO 13184 --- [LearnSpringBoot] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 7380 ms
+2024-10-21T15:19:56.490-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-10-21T15:19:56.945-07:00  INFO 13184 --- [LearnSpringBoot] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.3.Final
+2024-10-21T15:19:57.101-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-10-21T15:19:58.788-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-10-21T15:19:58.958-07:00  INFO 13184 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-10-21T15:19:59.548-07:00  INFO 13184 --- [LearnSpringBoot] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@2579d8a
+2024-10-21T15:19:59.560-07:00  INFO 13184 --- [LearnSpringBoot] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-10-21T15:19:59.723-07:00  WARN 13184 --- [LearnSpringBoot] [main] org.hibernate.orm.deprecation            : HHH90000025: PostgreSQLDialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-10-21T15:20:03.182-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-10-21T15:20:03.358-07:00  INFO 13184 --- [LearnSpringBoot] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-10-21T15:20:04.740-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+2024-10-21T15:20:06.673-07:00  WARN 13184 --- [LearnSpringBoot] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-10-21T15:20:06.865-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-10-21T15:20:09.446-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 3 endpoints beneath base path '/actuator'
+2024-10-21T15:20:09.708-07:00  INFO 13184 --- [LearnSpringBoot] [RMI TCP Connection(3)-127.0.0.1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-10-21T15:20:09.710-07:00  INFO 13184 --- [LearnSpringBoot] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-10-21T15:20:09.715-07:00  INFO 13184 --- [LearnSpringBoot] [RMI TCP Connection(3)-127.0.0.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2024-10-21T15:20:09.765-07:00  INFO 13184 --- [LearnSpringBoot] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-10-21T15:20:09.816-07:00  INFO 13184 --- [LearnSpringBoot] [main] c.t.s.L.LearnSpringBootApplication       : Started LearnSpringBootApplication in 24.492 seconds (process running for 26.444)
